@@ -1,11 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://v4ynf0tc6g12"]
+[gd_scene load_steps=5 format=3 uid="uid://v4ynf0tc6g12"]
 
 [ext_resource type="Script" uid="uid://b8ddwt0016pip" path="res://prefab_scripts/player_bases/player_movement.gd" id="1_tnn5i"]
+[ext_resource type="PackedScene" uid="uid://bahogta87calq" path="res://prefab_scenes/Ui/debug_terminal.tscn" id="1_wls7y"]
 [ext_resource type="Script" uid="uid://q3hg23wpsctq" path="res://prefab_scripts/player_bases/fps_cam.gd" id="2_owj21"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_46e5x"]
 
 [node name="player_fps" type="Node3D"]
+
+[node name="debug_terminal" parent="." instance=ExtResource("1_wls7y")]
 
 [node name="player_body" type="CharacterBody3D" parent="."]
 script = ExtResource("1_tnn5i")
