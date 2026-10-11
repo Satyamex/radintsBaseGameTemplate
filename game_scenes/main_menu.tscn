@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://exwidbg3jwtn"]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="main" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="title_label" type="Label" parent="main"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.363
+anchor_top = 0.042000003
+anchor_right = 0.637
+anchor_bottom = 0.27100003
+offset_left = -0.0020141602
+offset_top = -0.16000175
+offset_right = 0.001953125
+offset_bottom = -0.08001709
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 80
+text = "name"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="button_vbox" type="VBoxContainer" parent="main"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.39800003
+anchor_top = 0.53300005
+anchor_right = 0.60200006
+anchor_bottom = 0.94400007
+offset_left = 0.10797119
+offset_top = 0.15997314
+offset_right = -0.10803223
+offset_bottom = -0.120025635
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="main/button_vbox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Button 1"
+
+[node name="Button2" type="Button" parent="main/button_vbox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Button 2
+"
+
+[node name="Button3" type="Button" parent="main/button_vbox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Button 3"
