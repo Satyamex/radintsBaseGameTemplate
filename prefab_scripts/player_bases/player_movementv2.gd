@@ -38,7 +38,6 @@ func _physics_process(delta: float) -> void:
 			self.velocity.x += direction.x * accel_speed
 			self.velocity.z += direction.z * accel_speed
 	self.move_and_slide()
-	var horizontal_velocity: Vector2 = Vector2(self.velocity.x, self.velocity.z)
 
 func kill_jbuffer() -> void:
 	await self.get_tree().create_timer(self.jbuffer_time).timeout
