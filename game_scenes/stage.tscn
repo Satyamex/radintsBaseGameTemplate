@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://dxdsbuxtndb0u"]
+[gd_scene format=4 uid="uid://dxdsbuxtndb0u"]
 
 [ext_resource type="Texture2D" uid="uid://yt0cibimry7p" path="res://prototype_assets/textures/SBS - Cloudy Skyboxes - Panorama/Panorama/Panorama_Sky_06-512x512.png" id="1_8ws2d"]
 [ext_resource type="Texture2D" uid="uid://cw3laubo8st51" path="res://prototype_assets/models/map_bricks.png" id="2_l643k"]
@@ -103,39 +103,39 @@ shadow_mesh = SubResource("ArrayMesh_nk6ei")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hvp3b"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, -1, 0, -1, 1, 0, 1, -1, 0, -1, 1, 0, -1)
 
-[node name="stage" type="Node3D"]
+[node name="stage" type="Node3D" unique_id=1261627131]
 
-[node name="sun" type="DirectionalLight3D" parent="."]
+[node name="sun" type="DirectionalLight3D" parent="." unique_id=2000027231]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 light_energy = 1.4
 
-[node name="environment_suite" type="WorldEnvironment" parent="."]
+[node name="environment_suite" type="WorldEnvironment" parent="." unique_id=2049191736]
 environment = SubResource("Environment_nsj2l")
 
-[node name="map" type="Node3D" parent="."]
+[node name="map" type="Node3D" parent="." unique_id=420372962]
 
-[node name="walls" type="MeshInstance3D" parent="map"]
+[node name="walls" type="MeshInstance3D" parent="map" unique_id=675418027]
 transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1, -54, 1, 0)
 mesh = SubResource("ArrayMesh_qjpm3")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="map/walls"]
+[node name="StaticBody3D" type="StaticBody3D" parent="map/walls" unique_id=912287890]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="map/walls/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/walls/StaticBody3D" unique_id=1686155308]
 shape = SubResource("ConcavePolygonShape3D_l643k")
 
-[node name="ground" type="MeshInstance3D" parent="map"]
+[node name="ground" type="MeshInstance3D" parent="map" unique_id=1939843585]
 transform = Transform3D(55, 0, 0, 0, 55, 0, 0, 0, 55, 0, 0, 0)
 mesh = SubResource("ArrayMesh_hqcs0")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="map/ground"]
+[node name="StaticBody3D" type="StaticBody3D" parent="map/ground" unique_id=1712189451]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="map/ground/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/ground/StaticBody3D" unique_id=1909047406]
 shape = SubResource("ConcavePolygonShape3D_hvp3b")
 
-[node name="player_fps" parent="." instance=ExtResource("4_l643k")]
+[node name="player_fps" parent="." unique_id=1983685045 instance=ExtResource("4_l643k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="fih" parent="." instance=ExtResource("5_hvp3b")]
+[node name="fih" parent="." unique_id=1538866832 instance=ExtResource("5_hvp3b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -46)

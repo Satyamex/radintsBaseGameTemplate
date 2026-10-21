@@ -1,23 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://v4ynf0tc6g12"]
+[gd_scene format=3 uid="uid://v4ynf0tc6g12"]
 
-[ext_resource type="Script" uid="uid://b8ddwt0016pip" path="res://prefab_scripts/player_bases/player_movement.gd" id="1_tnn5i"]
 [ext_resource type="PackedScene" uid="uid://bahogta87calq" path="res://prefab_scenes/Ui/debug_terminal.tscn" id="1_wls7y"]
 [ext_resource type="Script" uid="uid://q3hg23wpsctq" path="res://prefab_scripts/player_bases/fps_cam.gd" id="2_owj21"]
+[ext_resource type="Script" uid="uid://do4q8lw3rhl32" path="res://prefab_scripts/player_bases/player_movementv2.gd" id="2_wls7y"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_46e5x"]
 
-[node name="player_fps" type="Node3D"]
+[node name="player_fps" type="Node3D" unique_id=1968183696]
 
-[node name="debug_terminal" parent="." instance=ExtResource("1_wls7y")]
+[node name="debug_terminal" parent="." unique_id=1674688520 instance=ExtResource("1_wls7y")]
 
-[node name="player_body" type="CharacterBody3D" parent="."]
-script = ExtResource("1_tnn5i")
+[node name="player_body" type="CharacterBody3D" parent="." unique_id=489672941]
+script = ExtResource("2_wls7y")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="player_body"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player_body" unique_id=1815843860]
 shape = SubResource("CapsuleShape3D_46e5x")
 
-[node name="cam_anchor" type="Node3D" parent="player_body"]
+[node name="cam_anchor" type="Node3D" parent="player_body" unique_id=713115516]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
 script = ExtResource("2_owj21")
 
-[node name="Camera3D" type="Camera3D" parent="player_body/cam_anchor"]
+[node name="Camera3D" type="Camera3D" parent="player_body/cam_anchor" unique_id=785102923]

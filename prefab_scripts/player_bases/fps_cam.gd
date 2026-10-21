@@ -7,14 +7,14 @@ extends Node3D
 var game_paused: bool = false
 
 func _ready() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	CursorManager.captured = true
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and CursorManager.captured:
 		player_body.rotate_y(-event.relative.x * self.cam_sens / 100)
 		self.rotate_x(-event.relative.y * self.cam_sens / 100)
 		self.rotation.x = clamp(self.rotation.x, deg_to_rad(self.xrot_clamp.x), deg_to_rad(self.xrot_clamp.y))
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
-		self.game_paused = !self.game_paused
+		CursorManager.captured = !CursorManager.captured
