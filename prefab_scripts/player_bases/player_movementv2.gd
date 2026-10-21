@@ -24,14 +24,11 @@ func _physics_process(delta: float) -> void:
 	if self.is_on_floor():
 		var horizontal_speed: float = Vector2(self.velocity.x, self.velocity.z).length()
 		if horizontal_speed > 0.0:
-			var drop: float = maxf(horizontal_speed, self.move_speed) * self.friction * delta
-			var new_speed: float = maxf(horizontal_speed - drop, 0.0)
-			if horizontal_speed > 0.0:
-				self.velocity.x *= new_speed / horizontal_speed
-				self.velocity.z *= new_speed / horizontal_speed
+			var new_speed: float = maxf(horizontal_speed - maxf(horizontal_speed, self.move_speed) * self.friction * delta, 0.0)
+			self.velocity.x *= new_speed / horizontal_speed
+			self.velocity.z *= new_speed / horizontal_speed
 	if direction != Vector3.ZERO:
-		var current_speed: float = Vector3(self.velocity.x, 0.0, self.velocity.z).dot(direction)
-		var add_speed: float = self.move_speed - current_speed
+		var add_speed: float = self.move_speed - Vector3(self.velocity.x, 0.0, self.velocity.z).dot(direction)
 		if add_speed > 0.0:
 			var accel: float = self.acceleration if self.is_on_floor() else self.air_acceleration
 			var accel_speed: float = minf(accel * delta * self.move_speed, add_speed)
